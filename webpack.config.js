@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'js/main.js',
+    filename: 'assets/js/main.js',
   },
   module: {
     rules: [
@@ -48,7 +48,7 @@ module.exports = {
         test: /\.png|\.jpg/,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name][ext]',
+          filename: 'assets/images/[name][ext]',
         },
         use: [
           // {
@@ -87,7 +87,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './scss/main.css',
+      filename: './assets/css/main.css',
     }),
     new HtmlWebpackPlugin({
       template: './src/templates/index.pug',

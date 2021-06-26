@@ -23,7 +23,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [
-                ['@babel/preset-env', { targets: 'ie>=11, > 1%, not dead' }],
+                ['@babel/preset-env', { targets: '> 0.25%, not dead' }],
               ],
             },
           },

@@ -11,7 +11,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'assets/js/main.js',
+    filename: 'assets/js/[name]-[contenthash].js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -48,7 +49,7 @@ module.exports = {
         test: /\.png|\.jpg/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][ext]',
+          filename: 'assets/images/[name].[contenthash][ext]',
         },
         use: [
           // {
@@ -63,7 +64,7 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65,
+                quality: 70,
               },
             },
           },
@@ -87,7 +88,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './assets/css/main.css',
+      filename: './assets/css/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/pug/index.pug',

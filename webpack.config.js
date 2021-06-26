@@ -90,15 +90,15 @@ module.exports = {
       filename: './assets/css/main.css',
     }),
     new HtmlWebpackPlugin({
-      template: './src/templates/index.pug',
+      template: './src/pug/index.pug',
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/templates/access.pug',
+      template: './src/pug/access.pug',
       filename: 'access.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/templates/members/taro.pug',
+      template: './src/pug/members/taro.pug',
       filename: 'members/taro.html',
     }),
     new CleanWebpackPlugin(),

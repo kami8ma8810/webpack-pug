@@ -88,15 +88,17 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './assets/css/[name].[contenthash].css',
+      filename: 'assets/css/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/pug/index.pug',
       filename: 'index.html',
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/pug/access.pug',
       filename: 'access.html',
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/pug/members/taro.pug',
@@ -104,4 +106,9 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  devServer: {
+    open: true, //ブラウザ自動起動
+    port: 9000,
+    contentBase: path.resolve(__dirname, 'dist'),
+  },
 };
